@@ -1,0 +1,16 @@
+services:
+  core:
+    image: maciresearch/core_worker:9.0.1
+    container_name: core
+    hostname: core
+    restart: on-failure
+    volumes:
+      - /lib/modules:/lib/modules
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./xmls:/root/.coregui/xmls # allows access to XML files createdfrom the GUI
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    environment:
+      - DISPLAY
