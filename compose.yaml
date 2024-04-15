@@ -1,0 +1,13 @@
+services:
+  core:
+    image: core
+    container_name: core
+    hostname: core
+    restart: on-failure
+    environment:
+      - DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./xmls:/root/.coregui/xmls:rw # allows access to XML files created from the GUI
+    privileged: true
+    command: sh -c "core-daemon & sleep 2 && core-gui"
