@@ -10,7 +10,6 @@ Official CORE images are not available on any public registry, so you need to bu
 git clone git@github.com:coreemu/core.git
 cd core
 docker build -t emane-python -f dockerfiles/Dockerfile.emane-python .
-docker build -t ospf-deb -f dockerfiles/Dockerfile.ospf-mdr-deb .
 docker build -t core -f dockerfiles/Dockerfile.ubuntu .
 ```
 
