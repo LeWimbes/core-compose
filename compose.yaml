@@ -1,6 +1,6 @@
 services:
   core:
-    image: core
+    image: core:9.2.0
     container_name: core
     hostname: core
     restart: on-failure
